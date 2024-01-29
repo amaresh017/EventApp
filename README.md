@@ -1,24 +1,47 @@
-# README
+# Events App: [Iterable](https://iterable.com/) Service Integration Demo App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## PreRequisites
+- MySQL
+- Ruby via rbenv
+- Rails
 
-Things you may want to cover:
+> references - Select OS as necessary
 
-* Ruby version
+  >- [Steps for installing Rails](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-20-04)
+  
+  >- [Steps for installing MySQL](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
 
-* System dependencies
+## Installation
 
-* Configuration
+  1. Set up Backend
 
-* Database creation
+  1.1 Correct ruby version
 
-* Database initialization
+  This project uses ruby 3.2.2, with [rbenv](https://github.com/rbenv/rbenv) installed ensure presence
+  ```
+    rbenv install 3.2.2
+    gem install bundler
+  ```
+  1.2 All libraries and their versions
 
-* How to run the test suite
+  ``` 
+    bundle install
+  ```
+  1.3 Add application configuation in config/application.yml
 
-* Services (job queues, cache servers, search engines, etc.)
+  ``` 
+    cp config/application.yml.example config/application.yml
+  ```
 
-* Deployment instructions
+  2. Set up the app - Create the very first user
+  
+  ```
+    rake db:seed
+  ```
 
-* ...
+  4. For Development
+  Bypass the authentication for the specific resource by commenting
+  ```ruby
+    before_action :authenticate_user!
+  ```
+  where required (controller level)
