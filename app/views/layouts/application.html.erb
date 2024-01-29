@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event & Email Notification System</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+
+  <body>
+    <%= render partial: "shared/header" %>
+    <% if signed_in? %>
+      <%= render "shared/alert_notice" %>
+      <div class="container container-main wrapper">
+        <%= yield %>
+        <div class="clearfix"></div>
+      </div>
+    <% else %>
+      <%= render "shared/alert_notice" %>
+      <%= yield %>
+    <% end %>
+    <%= render partial: "shared/footer" %>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require jquery-ui
+ *= require_self
+ */
+
+@import "bootstrap";
+
+
+.mobile_container {
+   position: relative;
+   width: 100%; /* 16:9 Aspect Ratio */
+}
+
+.ql-container {
+  height: 100px;
+}
+
+.ql-editor {
+  line-height: 1.5;
+}
+
+.btn-stack {
+  .btn, .label, .badge, .btn-group {
+    margin: 3px;
+  }
+}
+
+.clearfix {
+  height: 10vh;
+}
+
+/* navbar */
+.navbar {
+  box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: var(--primary);
+  .navbar-toggler-icon{
+    cursor: pointer;
+    width: 4em;
+    height: 2em;
+  }
+}
+
+.shadow-bottom {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+.product-tile{
+  height: 425px;
+  .card-title{
+    font-size: 1.2em;
+  }
+  .pt-img{
+    .card-img-top {
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+      text-align: center;
+    }
+  }
+}
+
+.hidden {
+  display: none!important;
+}
+
+.value-text {
+  font-weight: inherit;
+  font-size: large;
+  /*color: $dark_color;*/
+}
+
+.wrapper {
+  height: 100vh;
+}

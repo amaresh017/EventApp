@@ -1,0 +1,26 @@
+<div class="container-fluid mt-5">
+  <div class="col-md-4 col-sm-12 mx-auto">
+    <div class="card border border-danger shadow">
+      <div class="card-header text-center">
+        <h2>Sign In</h2>
+        <h4> Event Trigger and Email Notification System </h4>
+      </div>
+      <div class="card-body">
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), class: "form_horizontal") do |f| %>
+          <%= f.input :email %>
+          <%= f.input :password %>
+          <% if devise_mapping.rememberable? %>
+            <%= f.input :remember_me, as: :boolean %>
+          <% end %>
+
+          <div class="actions">
+            <%= f.submit "Log in", class: "btn btn-danger btn-block" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="card-footer">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

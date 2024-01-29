@@ -1,0 +1,25 @@
+<div class="container-fluid mt-5">
+  <div class="col-md-4 col-sm-12 mx-auto">
+    <div class="card border border-danger shadow">
+      <div class="card-header text-center">
+        <h4>Forgot your password?</h4>
+      </div>
+      <div class="card-body">
+        <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "form_horizontal" }) do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <div class="actions">
+            <%= f.button :submit, "Send me reset password instructions", class: "btn btn-danger btn-block" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="card-footer">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
+

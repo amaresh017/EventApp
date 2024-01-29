@@ -1,0 +1,17 @@
+<h2>Editing Your Profile</h2>
+
+<%= simple_form_for(@user, url: url, html: { class: "form-horizontal" }) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :full_name, label: "Full Name" %>
+    <% # f.input :email %>
+    <% # f.input :mobile, label: 'Mobile No' %>
+  </div>
+
+  <div class="col"><hr/></div>
+  <div class="col-md-4 col-sm-6 mx-auto">
+    <%= f.button :submit, class: "btn btn-secondary btn-block" %>
+  </div>
+<% end %>
+
+<%= link_to 'Show', @user, class: "btn btn-sm btn-outline-primary" %>

@@ -1,0 +1,57 @@
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-md-12">
+        <center>
+          <h2>My Profile</h2>
+        </center>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-4"><strong>Events:</strong></div>
+      <div class="col-md-8">
+        <div class="btn-stack">
+          <%= simple_form_for(Event.new()) do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :event_type, as: :hidden, input_html: {value: "EventA"} %>
+            <%= f.input :event_name, as: :hidden, input_html: {value: "Event A"} %>
+            <%= f.submit "Event A", class: "btn btn-sm btn-outline-primary" %>
+          <% end %>
+
+          <%= simple_form_for(Event.new()) do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :event_type, as: :hidden, input_html: {value: "EventB"} %>
+            <%= f.input :event_name, as: :hidden, input_html: {value: "Event B"} %>
+            <%= f.submit "Event B", class: "btn btn-sm btn-outline-info" %>
+          <% end %>
+        </div>  
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"><strong>Email:</strong></div>
+      <div class="col-md-8"><%= @user.email %></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"><strong>Full Name:</strong></div>
+      <div class="col-md-8"><%= @user.full_name %></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"><strong>Mobile Number:</strong></div>
+      <div class="col-md-8"><%= @user.mobile %></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"><strong>Date of Birth:</strong></div>
+      <div class="col-md-8"><%= @user.dob %></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"><strong>Gender:</strong></div>
+      <div class="col-md-8"><%= @user.gender %></div>
+    </div>
+  </div>
+  <div class="card-footer text-muted text-right">
+    <small>Last updated at: <%= @user.updated_at.to_s %></small>
+  </div>
+</div>
+   
