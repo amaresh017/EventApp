@@ -21,6 +21,7 @@ gem 'simple_form'
 
 # Productivity
 gem 'iterable-api-client'
+gem 'figaro'
 
 # Use mysql as the database for Active Record
 gem "mysql2", "~> 0.5"
